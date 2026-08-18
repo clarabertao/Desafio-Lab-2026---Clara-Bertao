@@ -71,6 +71,15 @@ Aqui há dois gargalos diferentes, então dois padrões se complementam:
   arma anterior e adiciona seu efeito por cima do resultado dela. Empilhar
   efeitos vira só embrulhar objetos, sem explosão combinatória de classes.
 
+> **Nota sobre o escopo do Command usado aqui:** esta é uma aplicação enxuta
+> do padrão, focada apenas no problema descrito no ticket. `Nave.atirar()`
+> atua como Invocador e conhece somente a interface `Arma.disparar()` (o
+> "comando"), nunca a implementação concreta por trás dela — o que já
+> resolve o desacoplamento pedido no briefing. Não foram implementados fila
+> de comandos, histórico ou undo/redo, recursos comuns em implementações
+> mais completas do Command, porque o requisito não pedia essas
+> funcionalidades.
+
 ---
 
 ## 2. Identificação dos Papéis no Código
